@@ -29,8 +29,7 @@ class TaskQueue {
   }
   
   // observe and stop check Reachabilty
-  func startReachability()
-  {
+  func startReachability() {
     do {
       try self.reachability?.startNotifier()
     }catch {
