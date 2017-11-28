@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031151251FCD086300226D77 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031151241FCD086300226D77 /* Notification.swift */; };
 		03BEA93C1FC7BD2000E5F4D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BEA93B1FC7BD2000E5F4D1 /* AppDelegate.swift */; };
 		03BEA93E1FC7BD2000E5F4D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BEA93D1FC7BD2000E5F4D1 /* ViewController.swift */; };
 		03BEA9411FC7BD2000E5F4D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03BEA93F1FC7BD2000E5F4D1 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031151241FCD086300226D77 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		03BEA9381FC7BD2000E5F4D1 /* ConnectionBoardcastor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectionBoardcastor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03BEA93B1FC7BD2000E5F4D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03BEA93D1FC7BD2000E5F4D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031151221FCD083200226D77 /* Queue */ = {
+			isa = PBXGroup;
+			children = (
+				03BEA95B1FC7CB1200E5F4D1 /* TaskQueue.swift */,
+			);
+			path = Queue;
+			sourceTree = "<group>";
+		};
+		031151231FCD084F00226D77 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				031151241FCD086300226D77 /* Notification.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		03BEA92F1FC7BD2000E5F4D1 = {
 			isa = PBXGroup;
 			children = (
@@ -91,9 +109,10 @@
 		03BEA93A1FC7BD2000E5F4D1 /* ConnectionBoardcastor */ = {
 			isa = PBXGroup;
 			children = (
+				031151231FCD084F00226D77 /* Constant */,
+				031151221FCD083200226D77 /* Queue */,
 				03BEA93B1FC7BD2000E5F4D1 /* AppDelegate.swift */,
 				03BEA93D1FC7BD2000E5F4D1 /* ViewController.swift */,
-				03BEA95B1FC7CB1200E5F4D1 /* TaskQueue.swift */,
 				03BEA93F1FC7BD2000E5F4D1 /* Main.storyboard */,
 				03BEA9421FC7BD2000E5F4D1 /* Assets.xcassets */,
 				03BEA9441FC7BD2000E5F4D1 /* LaunchScreen.storyboard */,
@@ -346,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				031151251FCD086300226D77 /* Notification.swift in Sources */,
 				03BEA93E1FC7BD2000E5F4D1 /* ViewController.swift in Sources */,
 				03BEA95C1FC7CB1200E5F4D1 /* TaskQueue.swift in Sources */,
 				03BEA93C1FC7BD2000E5F4D1 /* AppDelegate.swift in Sources */,
