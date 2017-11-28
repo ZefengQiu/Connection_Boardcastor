@@ -1,12 +1,18 @@
 PODS:
-  - ReachabilitySwift (2.3.3)
+  - QLayoutor (0.1.0)
+  - QTransition (0.1.0)
+  - ReachabilitySwift (3)
 
 DEPENDENCIES:
-  - ReachabilitySwift
+  - QLayoutor
+  - QTransition
+  - ReachabilitySwift (~> 3.0)
 
 SPEC CHECKSUMS:
-  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
+  QLayoutor: 9498baaf39c5a2a5a2654204cc4d18e64a581c39
+  QTransition: 1e546115c07e6b6a4a2449e99a039009ad311bdd
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: a78e7a38013d7b4c3c50c9ff5dc4fade49dfb83e
+PODFILE CHECKSUM: 5a904502f528e68f13ec32278443dbb6f8215d99
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0.beta.2

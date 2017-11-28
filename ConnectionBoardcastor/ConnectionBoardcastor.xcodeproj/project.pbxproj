@@ -13,6 +13,7 @@
 		03BEA9431FC7BD2000E5F4D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03BEA9421FC7BD2000E5F4D1 /* Assets.xcassets */; };
 		03BEA9461FC7BD2000E5F4D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03BEA9441FC7BD2000E5F4D1 /* LaunchScreen.storyboard */; };
 		03BEA9511FC7BD2000E5F4D1 /* ConnectionBoardcastorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BEA9501FC7BD2000E5F4D1 /* ConnectionBoardcastorTests.swift */; };
+		03BEA95C1FC7CB1200E5F4D1 /* TaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BEA95B1FC7CB1200E5F4D1 /* TaskQueue.swift */; };
 		198E910BED59A8274D44F38B /* Pods_ConnectionBoardcastor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 257B5DB6A88630AB2A160321 /* Pods_ConnectionBoardcastor.framework */; };
 		74171C36284688C82CE34CCB /* Pods_ConnectionBoardcastorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB9442EB1F1FC60AF04E4AB /* Pods_ConnectionBoardcastorTests.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		03BEA94C1FC7BD2000E5F4D1 /* ConnectionBoardcastorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectionBoardcastorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03BEA9501FC7BD2000E5F4D1 /* ConnectionBoardcastorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionBoardcastorTests.swift; sourceTree = "<group>"; };
 		03BEA9521FC7BD2000E5F4D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03BEA95B1FC7CB1200E5F4D1 /* TaskQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskQueue.swift; sourceTree = "<group>"; };
 		159473156CF22E4B2FD3340D /* Pods-ConnectionBoardcastorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectionBoardcastorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectionBoardcastorTests/Pods-ConnectionBoardcastorTests.release.xcconfig"; sourceTree = "<group>"; };
 		257B5DB6A88630AB2A160321 /* Pods_ConnectionBoardcastor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectionBoardcastor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB9442EB1F1FC60AF04E4AB /* Pods_ConnectionBoardcastorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConnectionBoardcastorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +93,7 @@
 			children = (
 				03BEA93B1FC7BD2000E5F4D1 /* AppDelegate.swift */,
 				03BEA93D1FC7BD2000E5F4D1 /* ViewController.swift */,
+				03BEA95B1FC7CB1200E5F4D1 /* TaskQueue.swift */,
 				03BEA93F1FC7BD2000E5F4D1 /* Main.storyboard */,
 				03BEA9421FC7BD2000E5F4D1 /* Assets.xcassets */,
 				03BEA9441FC7BD2000E5F4D1 /* LaunchScreen.storyboard */,
@@ -254,9 +257,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ConnectionBoardcastor/Pods-ConnectionBoardcastor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/QLayoutor/QLayoutor.framework",
+				"${BUILT_PRODUCTS_DIR}/QTransition/QTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/ReachabilitySwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QLayoutor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReachabilitySwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -269,13 +279,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnectionBoardcastorTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		76A3F14405EC0CE28526E2F7 /* [CP] Copy Pods Resources */ = {
@@ -314,13 +327,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConnectionBoardcastor-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -331,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03BEA93E1FC7BD2000E5F4D1 /* ViewController.swift in Sources */,
+				03BEA95C1FC7CB1200E5F4D1 /* TaskQueue.swift in Sources */,
 				03BEA93C1FC7BD2000E5F4D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

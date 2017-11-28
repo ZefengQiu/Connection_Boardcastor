@@ -6,7 +6,9 @@ target 'ConnectionBoardcastor' do
   # Pods for ConnectionBoardcastor
 
   use_frameworks!
-  pod 'ReachabilitySwift'
+  pod 'ReachabilitySwift', '~> 3.0'
+  pod 'QLayoutor'
+  pod 'QTransition'
 
   target 'ConnectionBoardcastorTests' do
     inherit! :search_paths
