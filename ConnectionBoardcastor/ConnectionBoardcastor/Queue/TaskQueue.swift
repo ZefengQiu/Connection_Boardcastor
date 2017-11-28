@@ -28,16 +28,23 @@ class TaskQueue {
     self.stopCheckReachability()
   }
   
+  // observe and stop check Reachabilty
   func startReachability()
   {
     do {
       try self.reachability?.startNotifier()
     }catch {
       print("Not Reachable")
-      //NotificationCenter.default.post(name: Notification.Connection.reachError, object: nil)
     }
   }
   
+  func stopCheckReachability() {
+    self.reachability?.stopNotifier()
+  }
+  
+  /**
+    Check device reachability using notification center.
+   */
   @objc private func checkReachability(notification: NSNotification) {
     guard let reach = self.reachability else {
       return
@@ -46,21 +53,14 @@ class TaskQueue {
     reach.whenReachable = { connection in
       if connection.isReachableViaWiFi {
         print("Reach Wifi")
-        //NotificationCenter.default.post(name: Notification.Connection.wifi, object: nil)
       }else {
         print("Reach Cellular")
-        //NotificationCenter.default.post(name: Notification.Connection.cellular, object: nil)
       }
     }
     
     reach.whenUnreachable = { _ in
       print("Not Reachable")
-      //NotificationCenter.default.post(name: Notification.Connection.none, object: nil)
     }
-  }
-  
-  func stopCheckReachability() {
-    self.reachability?.stopNotifier()
   }
   
 }
