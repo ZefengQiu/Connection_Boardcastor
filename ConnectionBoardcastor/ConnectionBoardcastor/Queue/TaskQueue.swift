@@ -12,7 +12,7 @@ import Foundation
 class TaskQueue {
   
   ///singleton
-  static var share = TaskQueue()
+  static var shared = TaskQueue()
   
   private let reachability: Reachability?
   
@@ -21,6 +21,7 @@ class TaskQueue {
     self.reachability = Reachability()
     
     NotificationCenter.default.addObserver(self, selector: #selector(TaskQueue.checkReachability(notification:)), name: ReachabilityChangedNotification, object: nil)
+    self.startReachability()
   }
   
   deinit {
